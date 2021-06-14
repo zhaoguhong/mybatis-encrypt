@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhaoguhong.user.dao.UserMapper">
+  <select id="getUsers" resultType="com.zhaoguhong.user.entity.User">
+		select * from user
+	</select>
+
+	<select id="queryByUser" parameterType="com.zhaoguhong.user.entity.User" resultType="com.zhaoguhong.user.entity.User">
+		select * from user where user_name=#{userName} AND id=#{id}
+	</select>
+
+	<resultMap id="resultMapUser" type="map">
+		<result property="userName" column="user_name" typeHandler="cryptTypeHandler"/>
+		<result property="id" column="id" />
+	</resultMap>
+
+
+	<select id="queryByMap" parameterType="map" resultMap="resultMapUser">
+		select * from user where user_name=#{userName,typeHandler=cryptTypeHandler}
+	</select>
+
+</mapper>
+

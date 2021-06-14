@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.zhaoguhong.mybatis.encrypt.autoconfigure.MybatisEncryptAutoConfiguration,\
+com.zhaoguhong.mybatis.encrypt.autoconfigure.MybatisTypeHandlerAutoConfiguration
