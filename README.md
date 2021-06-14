@@ -23,14 +23,14 @@ mybatis.encrypt.secret=wliFCmMMTw7kBWkF
 
 ## 使用
 
-##  注解 CryptField
+###  注解 CryptField
 简单的说，只要你的 java bean 属性上加了这个注解
 
 **以这个 java bean 作为入参，会对该参数的数据自动加密**
 
 **以这个 java bean 作为入出参（也可以是 List 中包含），会对该参数的数据自动加密**
 
-### 举个栗子
+#### 举个栗子
 
 定义一个java bean, 在 userName 上添加该注解
 
@@ -77,7 +77,7 @@ public class User implements Serializable {
 ```
 返回的 user 对象中，userName 字段已经被自动解密
 
-##  CryptTypeHandler
+###  CryptTypeHandler
 
 注解的方式虽然方便，但有时候不够灵活，如果我们传入的参数不是 java bean 对象，这时候自动加解密就不太好用了
 
@@ -87,7 +87,7 @@ cryptTypeHandler 是自定义的一个加解密类型处理器，可以手动指
 
 **如果在在出参的属性上，会对该属性进行自动解密**
 
-### 举个栗子
+#### 举个栗子
 
 我们有个入参是map的insert 方法
 ```java
